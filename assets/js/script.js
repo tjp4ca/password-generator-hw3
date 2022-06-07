@@ -1,34 +1,34 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var lowercase = ["a","b","c","d"]
-// console.log(numbers[0]);
-var randomLowerCase = Math.floor(Math.random() * lowercase.length) + 1;
-console.log(randomLowerCase)
+var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+var randomUpperCase = Math.floor(Math.random() * uppercase.length-1) + 1;
+console.log(uppercase[randomUpperCase])
 
+var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var randomLowerCase = Math.floor(Math.random() * lowercase.length-1) + 1;
+// console.log(randomLowerCase);
+console.log(lowercase[randomLowerCase])
 
+var number = [0,1,2,3,4,5,6,7,8,9]
+var randomNumber = Math.floor(Math.random() * number.length-1) + 1;
+console.log(number[randomNumber])
 
-
-
-// random number between 0-10
-// var randomNumber = Math.floor(Math.random() * 10) + 1;
-// console.log(randomNumber);
-
-// var randomNumber = Math.floor(Math.random() * randomNumber.length) + 1;
-// console.log(random);
-
+var symbol = ["!","@","#","$","%",",","."]
+var randomSymbol = Math.floor(Math.random() * symbol.length-1) + 1;
+console.log(symbol[randomSymbol])
 
 // prompts
 passwordLength = function() {
   var promptLength = window.prompt("Please choose your password length between 8 and 128 characters.");
   
-  if (promptLenght === "" || promptLength === null) {
+  if (promptLength === "" || promptLength === null) {
     window.alert("Choose a number between 8 and 128.");
     console.log("before return");
     return passwordLength();
-    console.log("after return");
   }
 }
+passwordLength();
 
 passwordUpper = function() {
   var promptUpper = window.prompt("Would you like to include uppercase characters?");
@@ -38,6 +38,7 @@ passwordUpper = function() {
     return passwordUpper();
   }
 }
+passwordUpper();
 
 passwordLower = function() {
   var promptLower = window.prompt("Would you like to include lowercase characters?");
@@ -47,6 +48,7 @@ passwordLower = function() {
     return passwordLower();
   }
 }
+passwordLower();
 
 passwordNumber = function() {
   var promptNumber = window.prompt("Would you like to include numeric characters?");
@@ -56,6 +58,7 @@ passwordNumber = function() {
     return passwordNumber();
   }
 }
+passwordNumber()
 
 passwordSymbol = function() {
   var promptSymbol = window.prompt("Would you like to include special characters?");
@@ -65,6 +68,7 @@ passwordSymbol = function() {
     return passwordSymbol();
   }
 }
+passwordSymbol();
 
 
 
@@ -89,3 +93,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
