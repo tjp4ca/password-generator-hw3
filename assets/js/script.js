@@ -3,72 +3,79 @@ var generateBtn = document.querySelector("#generate");
 
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 var randomUpperCase = Math.floor(Math.random() * uppercase.length-1) + 1;
-console.log(uppercase[randomUpperCase])
 
 var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var randomLowerCase = Math.floor(Math.random() * lowercase.length-1) + 1;
-// console.log(randomLowerCase);
-console.log(lowercase[randomLowerCase])
 
 var number = [0,1,2,3,4,5,6,7,8,9]
 var randomNumber = Math.floor(Math.random() * number.length-1) + 1;
-console.log(number[randomNumber])
 
 var symbol = ["!","@","#","$","%",",","."]
 var randomSymbol = Math.floor(Math.random() * symbol.length-1) + 1;
-console.log(symbol[randomSymbol])
 
 // prompts
 passwordLength = function() {
   var promptLength = window.prompt("Please choose your password length between 8 and 128 characters.");
   
-  if (promptLength === "" || promptLength === null) {
+  if (promptLength >= 8 && promptLength <= 128) {
+    console.log("length confirmed");
+  }
+  // else if (promptLenth <= 7) {
+  //   window.alert("Choose a number between 8 and 128.");
+  // }
+  else if (promptLength === "" || promptLength === null) {
     window.alert("Choose a number between 8 and 128.");
-    console.log("before return");
     return passwordLength();
-  }
+  } 
 }
-passwordLength();
+    passwordLength();
 
+// uppercase confirm
 passwordUpper = function() {
-  var promptUpper = window.prompt("Would you like to include uppercase characters?");
-
-  if (promptUpper === "" || promptUpper === null) {
-    window.alert("Choose yes or no");
-    return passwordUpper();
+  var confirmUpper = window.confirm("Would you like to include uppercase characters?");
+    console.log("uppercase confirmed");
+  
+    if (confirmUpper === true) {
+      console.log(uppercase[randomUpperCase]);
   }
-}
-passwordUpper();
+  // else if () {
 
+  // }
+} 
+    passwordUpper();
+
+// lowercase confirm
 passwordLower = function() {
-  var promptLower = window.prompt("Would you like to include lowercase characters?");
+  var confirmLower = window.confirm("Would you like to include lowercase characters?");
+    console.log("lowercase confirmed");
 
-  if (promptLower === "" || promptLower === null) {
-    window.alert("Choose yes or no");
-    return passwordLower();
-  }
-}
-passwordLower();
+    if (confirmLower === true) {
+      console.log(lowercase[randomLowerCase])
+    }
+} 
+    passwordLower();
 
+// number confirm
 passwordNumber = function() {
-  var promptNumber = window.prompt("Would you like to include numeric characters?");
+  var confirmNumber = window.confirm("Would you like to include numeric characters?");
+    console.log("number confirmed");
 
-  if (promptNumber === "" || promptNumber === null) {
-    window.alert("Choose yes or no");
-    return passwordNumber();
-  }
-}
-passwordNumber()
+    if (confirmNumber === true) {
+      console.log(number[randomNumber])
+    }
+} 
+    passwordNumber();
 
+// symbol confirm
 passwordSymbol = function() {
-  var promptSymbol = window.prompt("Would you like to include special characters?");
+  var confirmSymbol = window.confirm("Would you like to include special characters?");
+    console.log("symbol confirmed");
 
-  if (promptSymbol === "" || promptSymbol === null) {
-    window.alert("Choose yes or no");
-    return passwordSymbol();
-  }
-}
-passwordSymbol();
+    if (confirmSymbol === true) {
+      console.log(symbol[randomSymbol])
+    }
+} 
+    passwordSymbol();
 
 
 
